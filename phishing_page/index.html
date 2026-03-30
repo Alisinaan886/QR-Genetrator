@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Login - Educational Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+        .warning-badge {
+            background: #ef4444;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        h2 { color: #333; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .captured-data {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            font-size: 14px;
+            display: none;
+        }
+        .warning-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="warning-badge">⚠️ PHISHING DEMONSTRATION</div>
+        <h2>Secure Login</h2>
+        <form onsubmit="handlePhishingAttempt(event)">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="captured-data" id="capturedData"></div>
+        <div class="warning-info">
+            <strong>Red Flags (Look for these):</strong><br>
+            ⚠️ Check the URL carefully<br>
+            ⚠️ Verify domain spelling<br>
+            ⚠️ Look for HTTPS/SSL indicators<br>
+            ⚠️ Be cautious of QR codes from unknown sources
+        </div>
+    </div>
+    <script>
+        function handlePhishingAttempt(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            const capturedDiv = document.getElementById('capturedData');
+            capturedDiv.innerHTML = `
+                <strong>⚠️ CREDENTIALS CAPTURED (Educational Demo)</strong><br><br>
+                <strong>Email:</strong> ${email}<br>
+                <strong>Password:</strong> ${'•'.repeat(password.length)}<br><br>
+                <strong>What an attacker would also collect:</strong><br>
+                • IP Address: ${window.location.hostname}<br>
+                • User Agent: ${navigator.userAgent.substring(0, 50)}...<br>
+                • Timestamp: ${new Date().toLocaleString()}<br>
+                • Referrer: ${document.referrer || 'Direct access'}<br><br>
+                <em>In a real attack, this data would be sent to the attacker's server!</em>
+            `;
+            capturedDiv.style.display = 'block';
+            
+            console.log('DEMO: Credentials captured', {
+                email: email,
+                password: password,
+                timestamp: new Date(),
+                userAgent: navigator.userAgent
+            });
+        }
+    </script>
+</body>
+</html>
