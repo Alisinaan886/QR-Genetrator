@@ -1,21 +1,12 @@
 # QR Generator
 # 🔒 QR Code Phishing Lab - Educational Cybersecurity Project
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-![Educational](https://img.shields.io/badge/Purpose-Educational-green.svg)
-![Status](https://img.shields.io/badge/Status-Active-success.svg)
-
-> **⚠️ EDUCATIONAL PURPOSES ONLY ⚠️**  
+> ⚠️ EDUCATIONAL PURPOSES ONLY ⚠️**  
 > This project is designed for cybersecurity education in controlled environments.  
 > Unauthorized phishing attacks are **ILLEGAL**.
 
-![Project Banner](screenshots/banner.png)
-<!-- You can create a simple banner image or remove this line -->
 
----
-
-## 📋 Table of Contents
+📋 Table of Contents
 
 - [Overview](#overview)
 - [⚠️ Legal Disclaimer](#legal-disclaimer)
@@ -34,11 +25,11 @@
 
 ---
 
-## 🎯 Overview
+ 🎯 Overview
 
 This project simulates **QR code phishing (Quishing)** attacks in a safe, controlled environment to demonstrate how these attacks work and how to defend against them.
 
-### Why This Project?
+ Why This Project?
 
 QR code phishing is one of the **fastest-growing cyber threats**:
 - 📈 587% increase in quishing attacks in 2023
@@ -54,11 +45,10 @@ This lab provides hands-on experience with:
 
 ---
 
-## ⚠️ Legal Disclaimer
+ ⚠️ Legal Disclaimer
 
-**READ CAREFULLY BEFORE USE**
-
-### ✅ Authorized Use
+READ CAREFULLY BEFORE USE**
+# ✅ Authorized Use
 
 This software may ONLY be used for:
 - Educational purposes in academic settings
